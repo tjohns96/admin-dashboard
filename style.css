@@ -1,0 +1,205 @@
+@font-face {
+    font-family: Roboto;
+    src: url(roboto-regular-webfont.woff);
+}
+
+@font-face {
+    font-family: RobotoBlack;
+    src: url(roboto-black-webfont.woff);
+}
+
+@font-face {
+    font-family: RobotoMedium;
+    src: url(roboto-medium-webfont.woff);
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+}
+
+.container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 4fr;
+    grid-template-areas: "sidebar header"
+        "sidebar main-content";
+}
+
+.sidebar {
+    width: clamp(225px, 25vw, 370px);
+    background-color: #1992d4;
+    grid-area: sidebar;
+    padding-left: 24px;
+    display: grid;
+    grid-template-rows: 0.5fr 1fr 1fr 3fr;
+}
+
+.sidebar a, .sidebar p {
+    text-decoration: none;
+    color: white;
+}
+
+.dashboard {
+    padding-top: 16px;
+    font-family: RobotoMedium;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-left: -20px;
+    gap: 14px;
+}
+
+.navigation {
+    padding-top: 32px;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: repeat(6, minmax(30px, 1fr));
+    gap: 16px;
+}
+
+.navigation a {
+    justify-self: start;
+}
+
+.support {
+    padding-top: 48px;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: repeat(6, minmax(30px, 1fr));
+    gap: 16px;
+}
+
+.support, .navigation {
+    
+    font-family: RobotoMedium;
+    font-size: 1.2rem;
+}
+
+.header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding: 16px 24px;
+}
+.search-bar{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+input{
+    width: clamp(300px, 45vw, 800px);
+    height: 24px;
+    border-radius: 16px;
+    outline: white;
+    border: white;
+    background-color: #e2e8f0;
+    font-family: Roboto;
+    padding-left: 12px;
+    margin-right: 12px;
+}
+input:focus{
+    border: 1px solid #1992d4;
+}
+.profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+.profile p{
+    font-family: RobotoMedium;
+    font-size: 1.2rem;
+}
+.greeting{
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    grid-template-rows: 1fr 1.5fr;
+}
+.greeting a{
+    grid-row: 1 / 3;
+    align-self: center;
+}
+.greeting img{
+    width: 96px;
+}
+#hi{
+    font-family: RobotoMedium;
+    font-size: 1rem;
+    align-self: flex-end;
+}
+#name{
+    font-family: RobotoBlack;
+    font-size: 1.5rem;
+}
+.create-buttons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 6px;
+}
+button{
+    border: white;
+    border-radius: 16px;
+    background-color: #1992d4;
+    color: white;
+    width: 96px;
+    height: 32px;
+    font-family: Roboto;
+    font-size: 1rem;
+}
+.main-content {
+    display: grid;
+    grid-template-columns: 10fr 1fr;
+    grid-template-rows: 1fr 12fr;
+    grid-area: main-content;
+    background-color: #e2e8f0;
+    padding: 24px 16px 32px;
+}
+.main-content>p{
+    font-family: RobotoMedium;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    
+}
+.card-area{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 450px));
+    gap: 24px;
+    grid-row: 2/3;
+    grid-column: 1/2;
+}
+.card{
+    background-color: white;
+    padding: 32px 18px 24px;
+    width: clamp(350px, 35vw, 450px);
+    border-left: 10px solid #f0b429;
+    border-radius: 10px;
+    position: relative;
+}
+.project-name{
+    font-family: RobotoBlack;
+    font-size: 1.5rem;
+}
+.project-description{
+    font-family: Roboto;
+    font-size: 1rem;
+    color: #a0a0a0;
+}
+.card-icons{
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+    display: flex;
+    gap: 16px;
+}
+a>img{
+    width: 64px;
+}
